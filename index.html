@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#03140e">
+  <meta name="description" content="ALMOGHANI LIVE — الواجهة الوطنية السعودية و بوابة البث المباشر والأفلام والمسلسلات">
+  <title>ALMOGHANI LIVE | سعودية المجد</title>
+  <link rel="preload" as="image" href="assets/poster.jpg">
+  <style>
+    :root{--gold:#e2c483;--gold-rgb:226,196,131;--overlay:.62;--brightness:.85;--bg:#03140e;--font:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:#fff;font-family:var(--font)}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{text-decoration:none;color:inherit}button{cursor:pointer}
+    .stage{position:relative;min-height:100svh;overflow:hidden;isolation:isolate;background:#03140e}
+    .wash,.video-bg,.veil,.grain,.dots{position:absolute;inset:0;pointer-events:none}
+    .wash{background:radial-gradient(ellipse at 65% 20%,#2b7a50 0%,transparent 44%),linear-gradient(120deg,#002316,#010907);z-index:-5}
+    .video-bg{z-index:-4;overflow:hidden}
+    .video-bg video{width:100%;height:100%;object-fit:cover;filter:brightness(var(--brightness)) saturate(1.17);opacity:.78;transform:scale(1.035)}
+    .veil{z-index:-3;background:linear-gradient(90deg,rgba(0,15,9,.97) 0%,rgba(0,15,9,.68) 50%,rgba(0,15,9,.21) 100%),linear-gradient(0deg,rgba(0,10,6,.99) 0%,rgba(0,20,13,.20) 40%,rgba(0,10,6,.58) 100%);opacity:var(--overlay)}
+    .grain{z-index:-2;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' seed='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E")}
+    .dots{z-index:-1;background-image:radial-gradient(circle,rgba(226,196,131,.7) 1px,transparent 1.5px);background-size:57px 71px;mask-image:linear-gradient(120deg,#0000 15%,#0006 75%);opacity:.17;animation:stars 20s linear infinite}
+    @keyframes stars{to{transform:translateY(-65px)}}
+    .edge{position:absolute;inset:14px;border:1px solid #d9b96d25;border-radius:16px;pointer-events:none;z-index:1}
+    .top{height:84px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 clamp(20px,4.6vw,80px);position:relative;z-index:10;border-bottom:1px solid #ffffff13;background:linear-gradient(#01180eb0,#01180e14)}
+    .identity{display:flex;align-items:center;gap:12px;min-width:0}
+    .emblem{height:44px;width:44px;display:grid;place-items:center;position:relative;border:1px solid #e2c4838a;border-radius:13px;box-shadow:inset 0 0 12px #e2c48325,0 0 17px #e2c4831c;background:#0c261bb9;font-size:24px;color:var(--gold)}
+    .brand-name{font-weight:900;letter-spacing:2px;font-size:clamp(16px,2vw,23px);white-space:nowrap;color:#f1efdf}.brand-sub{font-size:10px;letter-spacing:1.6px;color:var(--gold);font-weight:700;margin-top:2px}
+    .top-actions{display:flex;align-items:center;gap:9px}.tag{font-size:11px;color:#bcdcc7;border:1px solid #ffffff24;background:#06291d99;padding:10px 14px;border-radius:99px;white-space:nowrap}
+    .ghost,.mute-btn{display:inline-flex;gap:9px;align-items:center;justify-content:center;background:#061c14ac;border:1px solid #ffffff36;color:#fff;padding:11px 15px;border-radius:14px;transition:.2s;font-weight:650}.ghost:hover,.mute-btn:hover{background:#173d2a;border-color:var(--gold)}
+    .main{min-height:calc(100svh - 84px);display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,440px);gap:clamp(30px,6vw,85px);align-items:center;padding:36px clamp(22px,6vw,108px) 68px;position:relative;z-index:2}
+    .hero{max-width:690px}.small{display:flex;gap:11px;align-items:center;color:var(--gold);font-size:14px;font-weight:700;letter-spacing:.5px;margin-bottom:18px}.small::before{content:'';display:block;width:43px;height:1px;background:var(--gold)}
+    h1{font-size:clamp(52px,7.7vw,104px);line-height:1.15;margin:0 0 16px;letter-spacing:-2.5px;font-weight:950;color:#f6f5e9;text-shadow:0 4px 30px #0008}
+    h1 span{background:linear-gradient(115deg,#fff2cc 10%,var(--gold) 44%,#f8e8ad 75%,#bd8a42);background-clip:text;color:transparent;-webkit-background-clip:text}
+    .subtitle{font-size:clamp(16px,1.7vw,23px);line-height:2;color:#e2eee4;max-width:580px;text-shadow:0 3px 13px #000d;margin:0 0 29px}
+    .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.primary{border:0;background:linear-gradient(135deg,#fff0c0,var(--gold) 60%,#b18b46);color:#122116;font-size:17px;font-weight:900;padding:17px 27px;border-radius:15px;box-shadow:0 5px 28px #d6b77540;display:inline-flex;align-items:center;gap:10px;transition:.2s}.primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px #d6b7757a}.primary:focus-visible,.ghost:focus-visible,.control:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+    .player-nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:24px 0}.line{height:1px;background:linear-gradient(90deg,transparent,#d9b97085,transparent);max-width:360px}
+    .quick-title{display:flex;align-items:center;gap:10px;color:#e4eada;font-size:12px;font-weight:800;margin:19px 0 12px}.quick-title::after{content:'';flex:1;max-width:220px;height:1px;background:#ffffff35}
+    .quick-links{display:flex;flex-wrap:wrap;gap:10px;max-width:650px}.quick{display:inline-flex;gap:9px;align-items:center;background:#031d15bd;border:1px solid #d9b97048;color:#e7ede7;padding:11px 16px;border-radius:12px;transition:.2s;font-size:13px;backdrop-filter:blur(8px)}.quick:hover{background:#305039aa;border-color:var(--gold);transform:translateY(-2px)}.quick i{color:var(--gold);font-size:18px;font-style:normal}
+    .portrait-area{display:flex;justify-content:center;align-items:center;position:relative;max-height:min(710px,78svh)}
+    .halo{position:absolute;inset:3%;border-radius:50%;background:#11b36d55;filter:blur(72px);z-index:-1;transform:scale(.85)}
+    .phone{border:1px solid #eacb8db8;border-radius:24px;width:min(100%,375px,45svh);aspect-ratio:9/16;max-height:70svh;position:relative;overflow:hidden;background:#09150e;box-shadow:0 28px 100px #000d,0 0 0 7px #041911b9,0 0 48px #ccb16d28;transform:rotate(-1.5deg)}
+    .phone video{width:100%;height:100%;object-fit:cover;display:block;background:url(assets/poster.jpg) center/cover no-repeat}.phone::after{content:'';position:absolute;inset:0;border:1px solid #ffffff3b;border-radius:23px;pointer-events:none}
+    .phone-top{position:absolute;top:13px;right:13px;left:13px;display:flex;align-items:center;justify-content:space-between;z-index:2;pointer-events:none}.live{font-size:10px;letter-spacing:1.2px;color:#fff;border-radius:7px;background:#c82021d9;padding:6px 10px;font-weight:900;box-shadow:0 0 18px #c820217a}.live:before{content:'●';margin-left:5px;animation:pulse 1.4s infinite}@keyframes pulse{50%{opacity:.3}}.film{font-size:10px;background:#001c13b9;border:1px solid #ffffff50;padding:6px 9px;border-radius:8px}
+    .phone-bottom{position:absolute;bottom:0;left:0;right:0;padding:45px 18px 17px;background:linear-gradient(transparent,#02140deb 70%);color:#f6eac9;display:flex;align-items:center;justify-content:space-between;font-size:11px;z-index:2}
+    .bottom-bar{position:absolute;bottom:13px;right:clamp(20px,4.6vw,80px);left:clamp(20px,4.6vw,80px);z-index:2;display:flex;align-items:center;justify-content:space-between;color:#d5dfd4a3;font-size:10px;letter-spacing:.7px;pointer-events:none}.bottom-bar span:last-child{color:var(--gold)}
+    .drawer-backdrop{position:fixed;inset:0;background:#000a;z-index:49;display:none;backdrop-filter:blur(4px)}.drawer-backdrop.active{display:block}
+    .drawer{position:fixed;inset:0 0 0 auto;width:min(100%,430px);z-index:50;background:linear-gradient(145deg,#112b1d,#03140e 65%);border-left:1px solid #e2c48377;box-shadow:-15px 0 75px #000b;transform:translateX(110%);transition:transform .35s;overflow:auto;padding:20px 22px 30px}.drawer.active{transform:translateX(0)}
+    .drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff20;padding-bottom:15px;margin-bottom:18px}.drawer-head b{font-size:19px;color:var(--gold)}.drawer-head small{display:block;color:#a7beb0;font-size:11px;margin-top:4px}
+    .control{border:1px solid #ffffff2f;border-radius:12px;background:#0b291b;color:#fff;padding:10px 14px;font-size:14px}.control:hover{border-color:var(--gold)}.group{padding:15px;border:1px solid #ffffff1d;background:#ffffff08;border-radius:15px;margin:13px 0}.group h3{font-size:14px;color:var(--gold);margin:0 0 14px}.field{margin-bottom:12px;display:block}.field span{font-size:12px;color:#d1dcd4;display:block;margin-bottom:6px}.field input[type=text],.field input[type=url],.field input[type=number]{width:100%;background:#02150e;border:1px solid #ffffff32;border-radius:9px;color:#fff;padding:11px;outline:0;direction:rtl}.field input:focus{border-color:var(--gold)}.field input[type=range]{width:100%;accent-color:var(--gold)}.field input[type=color]{width:100%;height:42px;background:transparent;border:0;cursor:pointer}.help{font-size:11px;line-height:1.65;color:#a9bcb1}.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.drawer-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.drawer-buttons button{border:1px solid #d9be7e66;border-radius:10px;background:#16442b;color:#fff;padding:12px 9px}.drawer-buttons button:hover{background:#236740}.drawer-buttons .gold-btn{background:#ddbe79;color:#09150c;font-weight:900}
+    .link-editor{border-bottom:1px solid #ffffff22;padding:8px 0}.link-editor strong{font-size:12px;display:block;margin-bottom:5px}.link-editor input{margin:4px 0}
+    .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(140px);z-index:70;max-width:calc(100vw - 30px);background:#0d3c26;border:1px solid #ddb76b;color:#fff;padding:11px 22px;border-radius:12px;box-shadow:0 9px 35px #000a;transition:.25s;text-align:center;font-size:13px}.toast.show{transform:translateX(-50%) translateY(0)}
+    @media(max-width:850px){.top{height:67px;padding:0 18px}.tag{display:none}.brand-name{font-size:15px}.top-actions .optional{display:none}.top-actions .ghost{min-width:42px;padding:10px}.emblem{width:39px;height:39px}.main{min-height:calc(100svh - 67px);grid-template-columns:1fr;padding:20px 23px 74px;align-items:end}.hero{margin-top:auto}.portrait-area{display:none}.wash{background:#01150d}.video-bg video{object-fit:cover;opacity:.94}.veil{background:linear-gradient(0deg,#00130efc 0%,#001710d1 29%,#00120d32 62%,#00110972 100%);opacity:var(--overlay)}h1{font-size:clamp(39px,10vw,65px);margin-bottom:10px}.small{margin-bottom:7px;font-size:12px}.subtitle{font-size:15px;margin:0 0 16px;line-height:1.8}.ctas .primary{padding:13px 18px;font-size:15px}.ctas .ghost{padding:12px;font-size:12px}.player-nav{margin:12px 0}.quick-links{gap:7px}.quick{padding:9px 11px;font-size:11px;border-radius:9px}.quick-title{margin-top:13px}.bottom-bar{left:22px;right:22px;bottom:12px;font-size:9px}}
+    @media(max-width:370px){.brand-name{letter-spacing:.3px;font-size:13px}.brand-sub{letter-spacing:.4px}.top-actions{gap:4px}.top-actions .ghost{padding:9px}.small{margin-bottom:5px}h1{font-size:38px}.quick{padding:8px 9px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  </style>
+</head>
+<body>
+  <main class="stage" id="videoFrame">
+    <div class="wash"></div>
+    <div class="video-bg"><video id="bgVideo" autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg" aria-label="فيديو سعودي وطني في خلفية الواجهة"><source src="assets/intro.mp4" type="video/mp4"></video></div>
+    <div class="veil"></div><div class="grain"></div><div class="dots"></div><div class="edge"></div>
+    <header class="top">
+      <div class="identity"><div class="emblem" aria-hidden="true">✦</div><div><div class="brand-name" id="brandText">ALMOGHANI LIVE</div><div class="brand-sub">SAUDI CINEMATIC EXPERIENCE</div></div></div>
+      <div class="top-actions"><span class="tag">🇸🇦 تصميم سعودي حصري</span><button class="ghost" id="soundTop" title="تشغيل الصوت" aria-label="تشغيل الصوت">♫ <span class="optional">تشغيل الصوت</span></button><button class="ghost" id="openEditor" aria-label="فتح لوحة التحكم">⚙ <span class="optional">التعديل</span></button></div>
+    </header>
+    <section class="main" aria-label="واجهة الموقع">
+      <div class="hero">
+        <div class="small" id="eyebrowText">المملكة العربية السعودية</div>
+        <h1 id="titleText"><span>سعودية المجد</span></h1>
+        <p class="subtitle" id="subtitleText">هيبة وطن، وشموخ راية، وعزّ لا ينتهي</p>
+        <div class="ctas"><a class="primary" id="ctaLink" href="https://arabic-live-channel-hub.lovable.app/">◀ <span id="ctaText">دخول المنصة</span></a><button class="ghost" id="fullScreen">⛶ عرض ملء الشاشة</button></div>
+        <div class="player-nav"><button class="mute-btn" id="playPause">Ⅱ إيقاف الفيديو</button><button class="mute-btn" id="muteBtn">♫ تشغيل نشيد فاروق نجد</button></div>
+        <div class="line"></div>
+        <div id="linksWrap"><div class="quick-title">انتقل مباشرة إلى القسم</div><nav class="quick-links" id="quickLinks" aria-label="أقسام المنصة"></nav></div>
+      </div>
+      <div class="portrait-area" aria-hidden="true"><div class="halo"></div><div class="phone"><video id="portraitVideo" autoplay muted loop playsinline preload="none" poster="assets/poster.jpg"><source src="assets/intro.mp4" type="video/mp4"></video><div class="phone-top"><span class="film">🇸🇦 ALMOGHANI STUDIO</span><span class="live">LIVE</span></div><div class="phone-bottom"><span>فيديو وطني • المملكة العربية السعودية</span><span>✦</span></div></div></div>
+    </section>
+    <footer class="bottom-bar"><span>© <span id="copyrightYear"></span> ALMOGHANI LIVE</span><span>🇸🇦 دام عزك يا وطن</span></footer>
+  </main>
+
+  <div class="drawer-backdrop" id="backdrop"></div>
+  <aside class="drawer" id="editor" aria-label="لوحة تحكم واجهة الموقع" aria-hidden="true">
+    <div class="drawer-head"><div><b>⚙ لوحة تحكم الواجهة</b><small>ALMOGHANI STUDIO — إدارة المقدمة والتصميم</small></div><button class="control" id="closeEditor" aria-label="إغلاق">✕</button></div>
+    <div class="group"><h3>✎ الهوية والنصوص</h3>
+      <label class="field"><span>اسم المنصة</span><input id="fBrand" type="text"></label>
+      <label class="field"><span>النص العلوي</span><input id="fEyebrow" type="text"></label>
+      <label class="field"><span>العنوان الرئيسي</span><input id="fTitle" type="text"></label>
+      <label class="field"><span>الوصف</span><input id="fSubtitle" type="text"></label>
+      <label class="field"><span>عنوان زر الدخول</span><input id="fCta" type="text"></label>
+      <label class="field"><span>رابط دخول الموقع</span><input id="fCtaUrl" type="url" dir="ltr"></label>
+    </div>
+    <div class="group"><h3>🎬 الفيديو والصوت</h3>
+      <label class="field"><span>رابط الفيديو أو مساره داخل الموقع</span><input id="fVideo" type="text" dir="ltr"></label>
+      <label class="field"><span>اختيار فيديو من جهازك للمعاينة المؤقتة</span><input id="fVideoFile" type="file" accept="video/*"></label>
+      <div class="field-row"><button class="control" id="adminMute">♫ تشغيل / كتم</button><button class="control" id="adminPlay">▶ تشغيل / إيقاف</button></div>
+      <p class="help">للاستبدال الدائم، ضع الفيديو الجديد داخل مجلد assets، ثم اكتب مساره هنا ونزّل ملف الإعدادات وارفعه مع الموقع. الملفات المختارة من الجهاز للمعاينة لا تُرفع تلقائيًا.</p>
+    </div>
+    <div class="group"><h3>🎨 اللون والتأثيرات</h3>
+      <label class="field"><span>لون اللمعة الذهبية</span><input id="fTheme" type="color"></label>
+      <label class="field"><span>قوة التعتيم <b id="overlayVal"></b></span><input id="fOverlay" type="range" min="0" max="100" step="1"></label>
+      <label class="field"><span>سطوع الفيديو <b id="brightnessVal"></b></span><input id="fBrightness" type="range" min="30" max="150" step="1"></label>
+      <label class="field" style="display:flex;align-items:center;gap:10px"><input id="fShowLinks" type="checkbox"><span style="margin:0">إظهار أزرار الأقسام</span></label>
+    </div>
+    <div class="group"><h3>🔗 تعديل الأقسام وروابطها</h3><div id="linkEditor"></div></div>
+    <div class="drawer-buttons"><button class="gold-btn" id="saveConfig">💾 حفظ في هذا الجهاز</button><button id="exportConfig">⬇ تنزيل إعدادات الموقع</button><button id="importConfig">⬆ استيراد إعدادات</button><button id="resetConfig">↺ استعادة الأصل</button></div>
+    <input type="file" id="importFile" accept="application/json,.json" hidden>
+    <p class="help">الحفظ داخل المتصفح يخص جهازك فقط. لتظهر التغييرات لجميع الزوار، استخدم «تنزيل إعدادات الموقع» واستبدل ملف site-config.json في الاستضافة، ثم ارفع الملفات.</p>
+  </aside>
+  <div role="status" aria-live="polite" class="toast" id="toast"></div>
+<script>
+(function(){'use strict';
+ const defaults={brand:'ALMOGHANI LIVE',eyebrow:'المملكة العربية السعودية',title:'سعودية المجد',subtitle:'هيبة وطن، وشموخ راية، وعزّ لا ينتهي',cta:'دخول المنصة',ctaUrl:'https://arabic-live-channel-hub.lovable.app/',video:'assets/intro.mp4',poster:'assets/poster.jpg',theme:'#e2c483',overlay:62,brightness:85,showLinks:true,links:[{label:'البث المباشر',icon:'◉',url:'https://arabic-live-channel-hub.lovable.app/live'},{label:'الأفلام',icon:'▣',url:'https://arabic-live-channel-hub.lovable.app/movies'},{label:'المسلسلات',icon:'▤',url:'https://arabic-live-channel-hub.lovable.app/vip?kind=series'},{label:'الرياضة',icon:'⚽',url:'https://arabic-live-channel-hub.lovable.app/sports'},{label:'الأخبار',icon:'◆',url:'https://arabic-live-channel-hub.lovable.app/news'},{label:'الدردشة',icon:'♧',url:'https://arabic-live-channel-hub.lovable.app/chat'}]};
+ const $=id=>document.getElementById(id), v=$('bgVideo'),p=$('portraitVideo');let config=structuredClone(defaults), temporaryVideo=null;let timer=null;
+ const goodUrl=s=>{try{let x=new URL(s,location.href);return ['https:','http:'].includes(x.protocol)||s.startsWith('/')||s.startsWith('assets/')}catch{return false}};
+ function msg(t){let el=$('toast');el.textContent=t;el.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>el.classList.remove('show'),3300)}
+ function syncVideoSrc(){let desired=temporaryVideo||config.video||defaults.video;if(v.dataset.src!==desired){[v,p].forEach(el=>{el.src=desired;el.load();el.play().catch(()=>{});});v.dataset.src=desired;p.muted=true;v.muted=true;syncControls();}}
+ function apply(){document.documentElement.style.setProperty('--gold',config.theme);document.documentElement.style.setProperty('--overlay',String(Number(config.overlay)/100));document.documentElement.style.setProperty('--brightness',String(Number(config.brightness)/100));
+  $('brandText').textContent=config.brand;$('eyebrowText').textContent=config.eyebrow;$('titleText').replaceChildren();let span=document.createElement('span');span.textContent=config.title;$('titleText').append(span);$('subtitleText').textContent=config.subtitle;$('ctaText').textContent=config.cta;
+  $('ctaLink').href=goodUrl(config.ctaUrl)?config.ctaUrl:defaults.ctaUrl;
+  $('linksWrap').hidden=!config.showLinks;let nav=$('quickLinks');nav.replaceChildren();config.links.forEach(link=>{let a=document.createElement('a');a.className='quick';a.href=goodUrl(link.url)?link.url:config.ctaUrl;let i=document.createElement('i');i.textContent=link.icon||'✦';let txt=document.createElement('span');txt.textContent=link.label;a.append(i,txt);nav.append(a)});
+  v.poster=config.poster||defaults.poster;p.poster=v.poster;syncVideoSrc();updateInputs();}
+ function updateInputs(){const mapping={fBrand:'brand',fEyebrow:'eyebrow',fTitle:'title',fSubtitle:'subtitle',fCta:'cta',fCtaUrl:'ctaUrl',fVideo:'video',fTheme:'theme',fOverlay:'overlay',fBrightness:'brightness'};for(let [id,key]of Object.entries(mapping))if(document.activeElement!==$(id))$(id).value=config[key];$('fShowLinks').checked=config.showLinks;$('overlayVal').textContent=config.overlay+'%';$('brightnessVal').textContent=config.brightness+'%';renderLinkEditor();}
+ function renderLinkEditor(){let el=$('linkEditor');if(el.contains(document.activeElement))return;el.replaceChildren();config.links.forEach((l,i)=>{let wrap=document.createElement('div');wrap.className='link-editor';let name=document.createElement('strong');name.textContent='القسم '+(i+1);wrap.append(name);for(let [key,ph]of [['label','اسم القسم'],['url','رابط القسم']]){let inp=document.createElement('input');inp.type='text';inp.placeholder=ph;inp.value=l[key];inp.dir=key==='url'?'ltr':'rtl';inp.addEventListener('input',()=>{config.links[i][key]=inp.value;let anchor=$('quickLinks').children[i];if(anchor){if(key==='label')anchor.lastChild.textContent=inp.value;else anchor.href=goodUrl(inp.value)?inp.value:config.ctaUrl;}});wrap.append(inp)}el.append(wrap)})}
+ function syncControls(){let play=v.paused?'▶ تشغيل الفيديو':'Ⅱ إيقاف الفيديو';$('playPause').textContent=play;let sound=v.muted?'♫ تشغيل نشيد فاروق نجد':'🔊 كتم الصوت';$('muteBtn').textContent=sound;$('soundTop').innerHTML=v.muted?'♫ <span class="optional">تشغيل الصوت</span>':'🔊 <span class="optional">كتم الصوت</span>';}
+ function toggleMute(){v.muted=!v.muted;p.muted=true;if(!v.paused)v.play().catch(()=>{});syncControls();}
+ function togglePlay(){if(v.paused){v.play().catch(()=>msg('اضغط لتفعيل تشغيل الفيديو'));p.play().catch(()=>{})}else{v.pause();p.pause()}setTimeout(syncControls,110)}
+ $('muteBtn').addEventListener('click',toggleMute);$('soundTop').addEventListener('click',toggleMute);$('adminMute').addEventListener('click',toggleMute);$('playPause').addEventListener('click',togglePlay);$('adminPlay').addEventListener('click',togglePlay);v.addEventListener('play',syncControls);v.addEventListener('pause',syncControls);
+ $('fullScreen').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if($('videoFrame').requestFullscreen)await $('videoFrame').requestFullscreen();else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();}catch{msg('وضع ملء الشاشة غير متاح في هذا المتصفح')}});
+ function openDrawer(open){$('editor').classList.toggle('active',open);$('backdrop').classList.toggle('active',open);$('editor').setAttribute('aria-hidden',String(!open));document.body.style.overflow=open?'hidden':'';if(open)updateInputs();}
+ $('openEditor').addEventListener('click',()=>openDrawer(true));$('closeEditor').addEventListener('click',()=>openDrawer(false));$('backdrop').addEventListener('click',()=>openDrawer(false));window.addEventListener('keydown',e=>{if(e.key==='Escape')openDrawer(false)});
+ const mapping={fBrand:'brand',fEyebrow:'eyebrow',fTitle:'title',fSubtitle:'subtitle',fCta:'cta',fCtaUrl:'ctaUrl',fVideo:'video',fTheme:'theme',fOverlay:'overlay',fBrightness:'brightness'};
+ for(let [id,key]of Object.entries(mapping))$(id).addEventListener('input',e=>{config[key]=['overlay','brightness'].includes(key)?Number(e.target.value):e.target.value;if(key==='video'&&temporaryVideo){URL.revokeObjectURL(temporaryVideo);temporaryVideo=null;}apply()});
+ $('fShowLinks').addEventListener('change',e=>{config.showLinks=e.target.checked;apply()});
+ $('fVideoFile').addEventListener('change',e=>{let file=e.target.files[0];if(!file)return;if(temporaryVideo)URL.revokeObjectURL(temporaryVideo);temporaryVideo=URL.createObjectURL(file);syncVideoSrc();msg('تمت معاينة الفيديو. للتغيير الدائم ارفع الملف إلى الاستضافة.');});
+ $('saveConfig').addEventListener('click',()=>{try{localStorage.setItem('almoghani_home_v1',JSON.stringify(config));msg('تم حفظ التعديلات على هذا الجهاز')}catch{msg('تعذر الحفظ على هذا الجهاز')}});
+ function download(obj,name){let blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),700)}
+ $('exportConfig').addEventListener('click',()=>{download(config,'site-config.json');msg('تم تنزيل الإعدادات — ارفعها للموقع لتطبيقها للجميع')});
+ $('importConfig').addEventListener('click',()=>$('importFile').click());$('importFile').addEventListener('change',async e=>{let f=e.target.files[0];if(!f)return;try{let c=JSON.parse(await f.text());config={...defaults,...c,links:Array.isArray(c.links)?c.links:defaults.links};temporaryVideo=null;apply();msg('تم استيراد الإعدادات')}catch{msg('ملف الإعدادات غير صالح')}});
+ $('resetConfig').addEventListener('click',()=>{if(!confirm('هل تريد استعادة التصميم الافتراضي؟'))return;localStorage.removeItem('almoghani_home_v1');config=structuredClone(defaults);temporaryVideo=null;apply();msg('تم استعادة التصميم الأصلي')});
+ async function boot(){try{let response=await fetch('./site-config.json',{cache:'no-store'});if(response.ok){let c=await response.json();config={...defaults,...c,links:Array.isArray(c.links)?c.links:defaults.links}}}catch{}try{let saved=JSON.parse(localStorage.getItem('almoghani_home_v1')||'null');if(saved&&typeof saved==='object')config={...config,...saved,links:Array.isArray(saved.links)?saved.links:config.links}}catch{}$('copyrightYear').textContent=new Date().getFullYear();apply();v.play().catch(()=>{});p.play().catch(()=>{});}
+ boot();
+})();
+</script>
+</body>
+</html>

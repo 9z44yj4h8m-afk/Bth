@@ -1,0 +1,22 @@
+{
+  "brand": "ALMOGHANI LIVE",
+  "eyebrow": "المملكة العربية السعودية",
+  "title": "سعودية المجد",
+  "subtitle": "هيبة وطن، وشموخ راية، وعزّ لا ينتهي",
+  "cta": "دخول المنصة",
+  "ctaUrl": "https://arabic-live-channel-hub.lovable.app/",
+  "video": "assets/intro.mp4",
+  "poster": "assets/poster.jpg",
+  "theme": "#e2c483",
+  "overlay": 62,
+  "brightness": 85,
+  "showLinks": true,
+  "links": [
+    {"label":"البث المباشر","icon":"◉","url":"https://arabic-live-channel-hub.lovable.app/live"},
+    {"label":"الأفلام","icon":"▣","url":"https://arabic-live-channel-hub.lovable.app/movies"},
+    {"label":"المسلسلات","icon":"▤","url":"https://arabic-live-channel-hub.lovable.app/vip?kind=series"},
+    {"label":"الرياضة","icon":"⚽","url":"https://arabic-live-channel-hub.lovable.app/sports"},
+    {"label":"الأخبار","icon":"◆","url":"https://arabic-live-channel-hub.lovable.app/news"},
+    {"label":"الدردشة","icon":"♧","url":"https://arabic-live-channel-hub.lovable.app/chat"}
+  ]
+}
